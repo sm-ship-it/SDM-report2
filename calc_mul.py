@@ -5,8 +5,8 @@ import re
 def calc(A,B):
         ai=str(A)
         bi=str(B)
-        p = re.compile('\d+(\.\d+)?')
-        if p.match(ai) or p.match(bi):
+        p = re.compile('\d+$')   #更新　小数は不可       
+        if p.match(ai) and p.match(bi): #更新　片側のみ文字も不可
                 a=float(ai)
                 b=float(bi)
                 if 0<a and a<b and b<1000:
@@ -32,3 +32,4 @@ def main ():
 
 if __name__ == '__main__':
 	main()
+
